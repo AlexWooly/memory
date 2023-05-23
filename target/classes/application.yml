@@ -1,0 +1,65 @@
+server:
+  port: 3310
+
+spring:
+  #邮箱服务配置
+  mail:
+    host: smtp.163.com #发送邮件服务器
+    username: njuptwly@163.com #发送邮件的邮箱地址
+    password: OHEXZCVLQWWHHTKQ
+    from: njuptwly@163.com # 发送邮件的地址，和上面username一致
+
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+
+  redis:
+    host: 124.222.4.79
+    port: 3309
+
+#数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.222.4.79:3308/yun?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    url: jdbc:mysql://127.0.0.1:3308/yun?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: wly771013
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 600000
+      maximum-pool-size: 500
+      max-lifetime: 1800000
+      minimum-idle: 20
+      validation-timeout: 3000
+      idle-timeout: 60000
+      connection-init-sql: SET NAMES utf8mb4
+
+#配置plus打印sql日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#设置日志级别,ERROR/WARN/INFO/DEBUG,默认是INFO以上才显示
+logging:
+  level:
+    root: INFO
+
+#阿里云OSS配置
+aliyun:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: LTAI5tDDGRNsdaANA1D9uXXs
+    access-key-secret: FOKVzdEIc6FlxdI4WjR2BySN1DbJMS
+    bucketname: wly-1024shop-img
+
+wx:
+  appId: wx46394ebb0d814a8e
+  secret: c858fc1afaea2fac697a9f829f1c134e
+
+mch:
+  privateKey: 03543168613xianlinyinxianghcyhcy
+  mchId: 1612619450
+  mchSerialNo: 728CF59B53FB1F6FFC4246D8CB9F00E2BBAB532C
+  apiV3Key: 03543168613xianlinyinxianghcyhcy

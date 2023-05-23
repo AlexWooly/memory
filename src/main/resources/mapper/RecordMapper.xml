@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.memory.yun.mapper.RecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.memory.yun.model.RecordDO">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="team1" property="team1" />
+        <result column="label" property="label" />
+        <result column="introduction" property="introduction" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="end_time" property="endTime" />
+        <result column="user_id" property="userId" />
+        <result column="del" property="delete" />
+        <result column="state" property="state" />
+
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, `name`, team1, label, introduction, update_time, create_time, end_time, user_id, `del`,`state`
+    </sql>
+
+</mapper>
